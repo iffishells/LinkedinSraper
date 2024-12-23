@@ -40,8 +40,12 @@ __all__ = ['ActionChains', 'By', 'Options', 'EC', 'WebDriverWait', 'webdriver', 
            # **Exceptions**
            ]
 clientX = clientY = 0
-driver_path =  os.path.join("Drivers","chromedriver-linux64","chromedriver")
-
+window_os =  False
+unix_os = True
+if window_os:
+    driver_path =  os.path.join("Drivers","WindowchromeDriver","chromedriver.exe")
+if unix_os:
+    driver_path =  os.path.join("Drivers","chromedriver-linux64","chromedriver")
 class Selenium:
     """ Master class for all selenium scraping """
 
