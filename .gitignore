@@ -1,7 +1,7 @@
 .venv
-*.exe
 *.csv
 *.iml
 *.xml
 .idea
 __pycache__
+ClientRequirements

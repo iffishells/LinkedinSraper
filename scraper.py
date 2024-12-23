@@ -21,8 +21,8 @@ LOCATION_XP_1 = '(//*[@class="t-14 t-black--light t-normal break-words"])'
 LOCATION_XP_2 = '(//*[@class="org-top-card-summary-info-list__info-item"])[2]'
 LOCATION_XP_3 = '(//*[@class="highcharts-point highcharts-negative highcharts-color-1"])[1]'
 
-EMAIL = 'razamehar024@gmail.com'
-PASSWORD = 'mianali024'
+EMAIL = 'imprint_multi_89@icloud.com'
+PASSWORD = 'bilalkhan'
 
 def writing_csv(row):
     fp = 'Output.csv'

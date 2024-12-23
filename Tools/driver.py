@@ -40,8 +40,12 @@ __all__ = ['ActionChains', 'By', 'Options', 'EC', 'WebDriverWait', 'webdriver', 
            # **Exceptions**
            ]
 clientX = clientY = 0
-
-
+window_os =  False
+unix_os = True
+if window_os:
+    driver_path =  os.path.join("Drivers","WindowchromeDriver","chromedriver.exe")
+if unix_os:
+    driver_path =  os.path.join("Drivers","chromedriver-linux64","chromedriver")
 class Selenium:
     """ Master class for all selenium scraping """
 
@@ -278,7 +282,7 @@ class Selenium:
         if self._webdriver == "uc":
             import undetected_chromedriver as uc
             from webdriver_manager.chrome import ChromeDriverManager
-            driver_executable_path = os.path.join(os.path.abspath('chromedriver.exe'))
+            driver_executable_path = os.path.join(os.path.abspath(driver_path))
             if not os.path.exists(driver_executable_path):
                 shutil.copy2(ChromeDriverManager().install(), driver_executable_path)
             self.driver = uc.Chrome(use_subprocess=True, options=self._options,
@@ -287,7 +291,7 @@ class Selenium:
         elif self._webdriver.lower() == "chrome":
             from webdriver_manager.chrome import ChromeDriverManager
             from selenium.webdriver.chrome.service import Service
-            driver_executable_path = os.path.join(os.path.abspath('chromedriver.exe'))
+            driver_executable_path = os.path.join(os.path.abspath(driver_path))
             if not os.path.exists(driver_executable_path):
                 logger.info("Driver not found. Downloading a new one ...")
                 shutil.copy2(ChromeDriverManager().install(), driver_executable_path)
